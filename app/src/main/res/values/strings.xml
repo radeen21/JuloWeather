@@ -1,0 +1,6 @@
+<resources>
+<!--    <string name="app_name">ProdiaTest</string>-->
+    <string name="app_name_staging">UltraPay STAGING</string>
+    <string name="app_name_dev">UltraPay DEV</string>
+    <string name="app_name_prod">UltraPay</string>
+</resources>

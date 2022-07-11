@@ -1,0 +1,156 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+def cprops = new Properties()
+cprops.load(new FileInputStream(file('config.properties')))
+def config = new ConfigSlurper().parse(cprops)
+android {
+    compileSdkVersion androidCompileSdkVersion
+    buildToolsVersion androidBuildToolsVersion
+
+    defaultConfig {
+        applicationId "com.example.prodiatest"
+        minSdkVersion androidMinSdkVersion
+        targetSdkVersion androidTargetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+//        compose true
+        viewBinding true
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+
+//    buildTypes {
+//        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//        }
+//    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    flavorDimensions "env"
+    productFlavors {
+        development {
+            dimension "env"
+            applicationIdSuffix '.dev'
+            resValue "string", "app_name", "@string/app_name_dev"
+            buildConfigField("String", "API_BASE_URL", config.env.dev.baseurl)
+//            buildConfigField("String", "API_MOCK_BASE_URL", config.env.dev.mockbaseurl)
+        }
+        staging {
+            dimension "env"
+            applicationIdSuffix '.staging'
+            resValue "string", "app_name", "@string/app_name_staging"
+            buildConfigField("String", "API_BASE_URL", config.env.staging.baseurl)
+        }
+        production {
+            dimension "env"
+            resValue "string", "app_name", "@string/app_name_prod"
+            buildConfigField("String", "API_BASE_URL", config.env.dev.baseurl)
+//            buildConfigField("String", "API_BASE_URL", config.env.prod.baseurl)
+        }
+    }
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation kotlinStdLib
+
+    api project(':base')
+    api project(':feature-home')
+
+    //network
+    implementation libs.retrofit
+    implementation libs.okhttp
+    implementation libs.gson
+    //androidx
+    implementation support.appcompat
+    implementation support.constraint
+    implementation support.recyclerview
+    implementation support.core
+    implementation support.design
+    implementation libs.fragmentKtx
+//    implementation libs.activityKtx
+    implementation libs.coreKtx
+//    implementation support.activityCompose
+
+    //compose
+//    implementation compose.ui
+//    implementation compose.tooling
+//    implementation compose.foundation
+//    implementation compose.runtime
+//    implementation compose.livedata
+//    implementation compose.rxjava
+//    implementation compose.material
+
+    implementation libs.multidex
+
+    //navigation
+    implementation support.navigationFragment
+    implementation support.navigationUi
+//    androidTestImplementation support.navigationTesting
+    implementation libs.activityKtx
+
+    //network
+    implementation libs.retrofit
+    implementation libs.okhttp
+    implementation libs.gson
+
+    implementation libs.glide
+
+    //rxjava
+    implementation libs.rxjava
+
+    //database
+//    implementation support.room
+//    kapt support.roomCompiler
+//    implementation support.roomCommon
+//    implementation support.roomRxJava
+
+    //hilt
+    kapt libs.hiltCompilerLivecycleVM
+    kapt libs.hiltCompilerAndroid
+    implementation libs.hiltAndroid
+
+//    kapt 'androidx.hilt:hilt-compiler:1.0.0-alpha01'
+//    kapt "com.google.dagger:hilt-android-compiler:2.28-alpha"
+
+//    hilt livecycle vm
+//    implementation libs.hiltLivecycleVM
+//    kapt libs.hiltCompilerLivecycleVM
+
+    implementation "com.google.android.gms:play-services-location:11.0.1"
+}

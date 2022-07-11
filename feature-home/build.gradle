@@ -1,0 +1,114 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdkVersion androidCompileSdkVersion
+    buildToolsVersion androidBuildToolsVersion
+
+    defaultConfig {
+        minSdkVersion androidMinSdkVersion
+        targetSdkVersion androidTargetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildFeatures {
+//        compose true
+        viewBinding true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation kotlinStdLib
+
+    implementation project(':base')
+
+
+    //androidx
+    implementation support.appcompat
+    implementation support.constraint
+    implementation support.recyclerview
+    implementation support.design
+    implementation libs.fragmentKtx
+    implementation libs.coreKtx
+
+    //navigation
+    implementation support.navigationFragment
+    implementation support.navigationUi
+    implementation libs.activityKtx
+
+    //hilt
+    implementation libs.hiltAndroid
+    kapt  libs.hiltCompilerAndroid
+
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.1'
+
+    //hilt livecycle vm
+//    implementation libs.hiltLivecycleVM
+//    kapt  libs.hiltCompilerLivecycleVM
+
+    implementation libs.lottie
+//    implementation 'com.github.bumptech.glide:annotations:4.11.0'
+//    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+//    implementation libs.glide
+////    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+//    implementation "com.github.bumptech.glide:glide:4.7.1"
+//    kapt "com.github.bumptech.glide:compiler:4.7.1"
+//    implementation "com.squareup.okhttp3:okhttp:3.14.0"
+//    implementation ('com.github.bumptech.glide:okhttp3-integration:4.7.1'){
+//        exclude group: 'glide-parent'
+//    }
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    //database
+//    implementation support.room
+//    kapt support.roomCompiler
+//    implementation support.roomCommon
+//    implementation support.roomRxJava
+
+
+//    implementation 'com.midtrans:uikit:1.28.0-SANDBOX'
+//    implementation 'com.midtrans:uikit:1.28.0'
+
+    testImplementation test.jUnit
+    androidTestImplementation test.testRunner
+    androidTestImplementation test.espresso
+
+//    implementation 'com.github.bumptech.glide:glide:4.11.0'
+//    implementation 'com.github.bumptech.glide:annotations:4.11.0'
+//    implementation "com.github.bumptech.glide:okhttp3-integration:4.11.0"
+//    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+//    implementation 'com.github.bumptech.glide:annotations:4.5.0'
+//    kapt 'com.github.bumptech.glide:compiler:4.5.0'
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation 'com.github.bumptech.glide:annotations:4.11.0'
+    implementation "com.github.bumptech.glide:okhttp3-integration:4.11.0" //okhttp.OkHttpGlideModule
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation "com.github.bumptech.glide:volley-integration:4.11.0"
+
+    implementation "com.google.android.gms:play-services-location:20.0.0"
+}
