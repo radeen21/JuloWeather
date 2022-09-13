@@ -6,10 +6,24 @@
 
     <include app:graph="@navigation/nav_graph_base_flow" />
     <include app:graph="@navigation/nav_home" />
+    <include app:graph="@navigation/nav_forecast" />
+
 
     <action
         android:id="@+id/action_auth_nav_home"
         app:destination="@id/nav_home"
+        app:popUpTo="@id/nav_graph_main"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim" >
+
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </action>
+
+    <action
+        android:id="@+id/action_home_nav_forecast"
+        app:destination="@id/nav_forecast"
         app:popUpTo="@id/nav_graph_main"
         app:enterAnim="@anim/nav_default_enter_anim"
         app:exitAnim="@anim/nav_default_exit_anim" >

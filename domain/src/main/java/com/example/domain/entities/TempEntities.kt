@@ -1,7 +1,6 @@
 package com.example.domain.entities
 
-import com.google.gson.annotations.SerializedName
-
 data class TempEntities(
-    val min: Double
+    val min: Double,
+    val max: Double
 )

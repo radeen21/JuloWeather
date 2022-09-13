@@ -11,6 +11,8 @@ data class CurrentWeatherData(
     val humidity: Int,
     @SerializedName("wind_speed")
     val windSpeed: Float,
+    @SerializedName("dt")
+    var dt: Long?,
     @SerializedName("weather")
     val weather: List<Weather>
 )

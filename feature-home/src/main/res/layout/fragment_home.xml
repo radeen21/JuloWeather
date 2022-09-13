@@ -2,34 +2,64 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_bg_cloud"
+    android:background="@drawable/bg_image"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".presentation.fragment.HomeFragment">
-
 
     <TextView
         android:id="@+id/tvCity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="disini"
-        android:textSize="30sp"
+        android:text="Kota"
+        android:textSize="26sp"
         android:textColor="#000000"
         android:textStyle="bold"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
+        android:id="@+id/tvAddCity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="Search City"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tvCity"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvCity"
+        app:layout_constraintStart_toStartOf="@id/tvCity"
+        app:layout_constraintEnd_toEndOf="@id/tvCity"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivWeather"
+        android:layout_width="82dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/common_google_signin_btn_icon_dark"
+        app:layout_constraintTop_toBottomOf="@id/tvDay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
         android:id="@+id/tvTemp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="4dp"
         android:text="19"
         android:textSize="80sp"
         android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/tvCity"
+        app:layout_constraintTop_toBottomOf="@id/ivWeather"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -50,6 +80,7 @@
         android:textSize="18sp"
         android:text="120202"
         android:gravity="center"
+        android:visibility="gone"
         android:textColor="@color/design_default_color_primary"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toStartOf="@id/tvLong"
@@ -63,6 +94,7 @@
         android:textSize="18sp"
         android:text="120202"
         android:gravity="center"
+        android:visibility="gone"
         android:textColor="@color/design_default_color_primary"
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toEndOf="@id/tvLat"
@@ -79,6 +111,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_margin="10dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

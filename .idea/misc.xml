@@ -5,9 +5,25 @@
       <map>
         <entry key="..\:/Babar/Koenci/ProdiaTest/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Babar/Koenci/ProdiaTest/app/src/main/res/layout/fragment_beranda_nih.xml" value="0.1" />
+        <entry key="..\:/Babar/Koenci/ProdiaTest/base/src/main/res/drawable/coba.xml" value="0.19583333333333333" />
         <entry key="..\:/Babar/Koenci/ProdiaTest/base/src/main/res/layout/fragment.xml" value="0.1" />
         <entry key="..\:/Babar/Koenci/ProdiaTest/base/src/main/res/layout/fragment_start.xml" value="0.1" />
         <entry key="..\:/Babar/Koenci/ProdiaTest/base/src/main/res/layout/progress_bar.xml" value="0.1" />
+        <entry key="..\:/Babar/Koenci/ProdiaTest/feature-addcity/src/main/res/drawable/bg_gradation_blue.xml" value="0.19583333333333333" />
+        <entry key="..\:/Babar/Koenci/ProdiaTest/feature-addcity/src/main/res/drawable/da.xml" value="0.19583333333333333" />
+        <entry key="..\:/Babar/Koenci/ProdiaTest/feature-addcity/src/main/res/drawable/ic_add_24_black.xml" value="0.19583333333333333" />
+        <entry key="..\:/Babar/Koenci/ProdiaTest/feature-addcity/src/main/res/drawable/ic_arrow_down_24.xml" value="0.19583333333333333" />
+        <entry key="..\:/Babar/Koenci/ProdiaTest/feature-addcity/src/main/res/drawable/ic_baseline_click_24.xml" value="0.19583333333333333" />
+        <entry key="..\:/Babar/Koenci/ProdiaTest/feature-addcity/src/main/res/drawable/ic_baseline_star_24.xml" value="0.19583333333333333" />
+        <entry key="..\:/Babar/Koenci/ProdiaTest/feature-addcity/src/main/res/drawable/ic_chevron_left_24.xml" value="0.10625" />
+        <entry key="..\:/Babar/Koenci/ProdiaTest/feature-addcity/src/main/res/drawable/ic_chevron_right_24.xml" value="0.10625" />
+        <entry key="..\:/Babar/Koenci/ProdiaTest/feature-addcity/src/main/res/drawable/ic_launcher_background.xml" value="0.19583333333333333" />
+        <entry key="..\:/Babar/Koenci/ProdiaTest/feature-addcity/src/main/res/drawable/ic_svg_weather.xml" value="0.19583333333333333" />
+        <entry key="..\:/Babar/Koenci/ProdiaTest/feature-addcity/src/main/res/layout/fragment_add_cities.xml" value="0.16666666666666666" />
+        <entry key="..\:/Babar/Koenci/ProdiaTest/feature-addcity/src/main/res/layout/fragment_add_city.xml" value="0.12047101449275362" />
+        <entry key="..\:/Babar/Koenci/ProdiaTest/feature-addcity/src/main/res/layout/fragment_cities_saved.xml" value="0.11458333333333333" />
+        <entry key="..\:/Babar/Koenci/ProdiaTest/feature-addcity/src/main/res/layout/fragment_saved_cities.xml" value="0.11458333333333333" />
+        <entry key="..\:/Babar/Koenci/ProdiaTest/feature-addcity/src/main/res/layout/item_saved_cities.xml" value="0.11458333333333333" />
         <entry key="..\:/Babar/Koenci/ProdiaTest/feature-home/src/main/res/layout/fragment_beranda.xml" value="0.1" />
         <entry key="..\:/Babar/Koenci/ProdiaTest/feature-home/src/main/res/layout/fragment_home.xml" value="0.16666666666666666" />
         <entry key="..\:/Babar/Koenci/ProdiaTest/feature-home/src/main/res/layout/item_list_weather.xml" value="0.14666666666666667" />

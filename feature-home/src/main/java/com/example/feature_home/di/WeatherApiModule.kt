@@ -1,6 +1,7 @@
 package com.example.feature_home.di
 
 import com.example.data.api.ApiService
+import com.example.data.mapper.ForecastMapper
 import com.example.data.mapper.WeatherMapper
 import com.example.data.repoimpl.WeatherRepoImpl
 import com.example.domain.repository.WeatherRepository

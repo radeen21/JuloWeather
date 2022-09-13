@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class DailyWeatherItemData(
     @SerializedName("dt")
-    val dt : Double,
+    val dt : Long,
     @SerializedName("temp")
     val temp : Temp,
     @SerializedName("weather")

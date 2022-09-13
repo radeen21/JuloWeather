@@ -11,6 +11,7 @@ class WeatherMapper : Mapper<WeatherDto, WeatherEntities>() {
                 from.current.pressure,
                 from.current.humidity,
                 from.current.windSpeed,
+                from.current.dt,
                 from.current.weather.map { weather ->
                     WeatherDatEntities(
                         weather.id, weather.main, weather.description, weather.icon
@@ -20,7 +21,7 @@ class WeatherMapper : Mapper<WeatherDto, WeatherEntities>() {
             from.daily.map { daily ->
                 DailyWeatherItemEntities(
                     daily.dt,
-                    TempEntities(daily.temp.min),
+                    TempEntities(daily.temp.min, daily.temp.max),
                     daily.weatherList.map { item ->
                         WeatherItemEntities(
                             item.id,

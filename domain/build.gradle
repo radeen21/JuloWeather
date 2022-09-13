@@ -58,18 +58,16 @@ dependencies {
     implementation libs.rxjava
     implementation libs.androidAnnotations
 
-//    implementation libs.dagger
-//    annotationProcessor  libs.daggerCompiler
-
     //hilt
     implementation libs.hiltAndroid
     kapt  libs.hiltCompilerAndroid
 
-    //        hilt livecycle vm
-//    implementation libs.hiltLivecycleVM
-//    kapt  libs.hiltCompilerLivecycleVM
-
     //database
+    implementation support.room
+    kapt support.roomCompiler
+    implementation support.roomCommon
+    implementation support.roomRxJava
+
 
     implementation support.coroutines
     implementation support.coroutinesCore

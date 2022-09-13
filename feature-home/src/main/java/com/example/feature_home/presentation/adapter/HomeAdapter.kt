@@ -6,14 +6,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.base.date.DateUtils.convertLongToTime
 import com.example.domain.entities.DailyWeatherItemEntities
+import com.example.feature_home.R
 import com.example.feature_home.databinding.ItemListWeatherBinding
 import java.text.SimpleDateFormat
 import java.time.DayOfWeek
 import java.time.LocalDate
 import java.util.*
+import kotlin.math.roundToInt
 
-class HomeAdapter (private val data: List<DailyWeatherItemEntities>?) :
+class HomeAdapter(private val data: List<DailyWeatherItemEntities>?) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(viewGroup: ViewGroup, pos: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(viewGroup.context)
@@ -46,9 +50,16 @@ class HomeAdapter (private val data: List<DailyWeatherItemEntities>?) :
         RecyclerView.ViewHolder(itemReviewBinding.root) {
 
         fun bind(daily: DailyWeatherItemEntities) {
-            val updatedAtText = getDateTime(daily.dt.toLong())
+            val celsiusFromKelvin = daily.temp.max.minus(273.15)
+            val celsiusValue = celsiusFromKelvin.roundToInt()
+
+            val updatedAtText = getDateTime(daily.dt)
             itemReviewBinding.tvDay.text = updatedAtText.toString()
-            itemReviewBinding.tvCelsiusDay.text = daily.temp.min.toString() + 0x00B0.toChar()
+            itemReviewBinding.tvCelsiusDay.text =
+                itemView.resources.getString(R.string.celsius_value, celsiusValue)
+            Glide.with(itemView.context)
+                .load("${"https://openweathermap.org/img/w"}/${daily.weatherList.get(0).iconCode}.png")
+                .into(itemReviewBinding.ivWeatherDay)
 
             daily.temp.min.toString().substringBefore(".") + "°"
 

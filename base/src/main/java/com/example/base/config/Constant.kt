@@ -2,6 +2,6 @@ package com.example.base.config
 
 class Constant {
     companion object {
-        const val API_KEY = "ff06c8ba72c2e96740d129f7cf7bdf4c"
+        const val API_KEY = "82ce0dc47d36a0c7c95d4c9c03907a5d"
     }
 }

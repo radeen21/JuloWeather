@@ -49,8 +49,11 @@ dependencies {
     //appcompat
     implementation support.appcompat
 
-//    implementation libs.dagger
-//    annotationProcessor  libs.daggerCompiler
+    //database
+    implementation support.room
+    kapt support.roomCompiler
+    implementation support.roomCommon
+    implementation support.roomRxJava
 
     //hilt
     implementation libs.hiltAndroid

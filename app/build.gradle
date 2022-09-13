@@ -91,6 +91,7 @@ dependencies {
 
     api project(':base')
     api project(':feature-home')
+    api project(':feature-addcity')
 
     //network
     implementation libs.retrofit

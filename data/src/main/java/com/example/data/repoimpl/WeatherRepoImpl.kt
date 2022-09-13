@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 class WeatherRepoImpl @Inject constructor(
     private val api: ApiService,
-    private val weatherMapper: WeatherMapper,
+    private val weatherMapper: WeatherMapper
 ) : WeatherRepository {
 
     override fun getToken(

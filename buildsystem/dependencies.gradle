@@ -30,7 +30,7 @@ ext {
     androidxVersion = '1.0.0'
     coreVersion = "1.6.0"
     pagingVersion = '2.1.0'
-//    roomVersion = '2.0.0'
+    roomVersion = '2.0.0'
     lifecycleVersion = '2.2.0'
 //    navVersion = "2.0.0"
     koinVersion = '2.0.1'
@@ -105,10 +105,10 @@ ext {
             design            : "com.google.android.material:material:$androidxVersion",
             kotlinextensions  : "org.jetbrains.kotlin:kotlin-android-extensions-runtime:$kotlin_version",
             core              : "androidx.core:core-ktx:$coreVersion",
-//            roomCompiler      : "androidx.room:room-compiler:$roomVersion",
-//            room              : "androidx.room:room-runtime:$roomVersion",
-//            roomRxJava        : "androidx.room:room-rxjava2:$roomVersion",
-//            roomCommon        : "androidx.room:room-common:$roomVersion",
+            roomCompiler      : "androidx.room:room-compiler:$roomVersion",
+            room              : "androidx.room:room-runtime:$roomVersion",
+            roomRxJava        : "androidx.room:room-rxjava2:$roomVersion",
+            roomCommon        : "androidx.room:room-common:$roomVersion",
             paging            : "androidx.paging:paging-runtime:$pagingVersion",
             lifecycle         : "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion",
             lifecycleVM       : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion",

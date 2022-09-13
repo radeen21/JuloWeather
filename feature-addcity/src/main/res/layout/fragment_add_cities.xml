@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_image"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".AddCityFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btn_back"
+                android:layout_width="@dimen/space_x10"
+                android:layout_height="@dimen/space_x10"
+                android:layout_marginStart="@dimen/space_x3"
+                android:src="@drawable/ic_chevron_left_24"
+                app:layout_constraintBottom_toBottomOf="@+id/view_text_page_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/view_text_page_title" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/view_text_page_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_x5"
+                android:text="@string/search_city"
+                android:textSize="@dimen/text_x6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/view_edit_text_city"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_x8"
+                android:layout_marginTop="@dimen/space_x8"
+                android:layout_marginEnd="@dimen/space_x6"
+                app:boxBackgroundColor="@color/white"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toStartOf="@+id/btn_search"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_text_page_title">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/city_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/search_city"
+                    android:inputType="text"
+                    android:padding="14dp"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:textSize="14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btn_search"
+                android:layout_width="@dimen/space_x7"
+                android:layout_height="@dimen/space_x7"
+                android:layout_marginStart="@dimen/space_x3"
+                android:layout_marginTop="@dimen/space_x2"
+                android:layout_marginEnd="@dimen/space_x8"
+                android:src="@drawable/ic_baseline_click_24"
+                app:layout_constraintBottom_toBottomOf="@+id/view_edit_text_city"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/view_edit_text_city" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_x10"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/btn_search">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/view_text_locale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_x5"
+                    android:ellipsize="end"
+                    android:maxWidth="@dimen/space_x52"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_x6"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Jakarta" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/view_locale_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_x5"
+                    android:layout_marginTop="@dimen/space_x2"
+                    android:ellipsize="end"
+                    android:maxWidth="@dimen/space_x55"
+                    android:maxLines="1"
+                    android:textSize="@dimen/text_x5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view_text_locale"
+                    tools:text="Today, 26 May" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/button_fav"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginEnd="@dimen/space_x4"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/view_locale_date"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/view_text_locale"
+                    tools:src="@drawable/ic_baseline_star_outline_24" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/view_temp_info"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_x5"
+                    android:layout_marginTop="@dimen/space_x5"
+                    android:layout_marginEnd="@dimen/space_x5"
+                    app:cardCornerRadius="@dimen/space_x4"
+                    app:cardUseCompatPadding="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view_locale_date">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/view_layout_container_celsius_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/space_x5"
+                        app:layout_constraintTop_toBottomOf="@+id/view_locale_date">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/view_icon_weather"
+                            android:layout_width="@dimen/space_x20"
+                            android:layout_height="@dimen/space_x20"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:src="@drawable/ic_svg_weather" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/view_text_celsius"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/space_x4"
+                            android:layout_marginTop="@dimen/space_x4"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_x16"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/view_icon_weather"
+                            tools:text="25&#xb0;" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/view_text_weather_desc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/space_x2"
+                            android:ellipsize="end"
+                            android:inputType="textCapWords"
+                            android:maxWidth="@dimen/space_x55"
+                            android:maxLines="1"
+                            android:textSize="@dimen/text_x7"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/view_text_celsius"
+                            tools:text="sunny day" />
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/view_img_wind"
+                            android:layout_width="@dimen/space_x6"
+                            android:layout_height="@dimen/space_x6"
+                            android:layout_marginTop="20dp"
+                            android:src="@drawable/ic_wind"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/view_text_weather_desc" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/view_text_wind_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/space_x2"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_x4"
+                            app:layout_constraintStart_toEndOf="@id/view_img_wind"
+                            app:layout_constraintTop_toTopOf="@+id/view_img_wind"
+                            tools:text="12,4 km/h" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/view_img_sun"
+                            android:layout_width="@dimen/space_x6"
+                            android:layout_height="@dimen/space_x6"
+                            android:visibility="gone"
+                            android:src="@drawable/ic_baseline_wb_sunny_24"
+                            app:layout_constraintStart_toStartOf="@id/view_img_wind"
+                            app:layout_constraintTop_toBottomOf="@id/view_img_wind" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/view_text_index_uv_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/space_x2"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_x4"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toEndOf="@+id/view_img_sun"
+                            app:layout_constraintTop_toTopOf="@+id/view_img_sun"
+                            tools:text="0" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/view_img_humidity"
+                            android:layout_width="@dimen/space_x6"
+                            android:layout_height="@dimen/space_x6"
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/ic_humidity"
+                            app:layout_constraintStart_toStartOf="@id/view_img_sun"
+                            app:layout_constraintTop_toBottomOf="@id/view_img_sun"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/view_text_humidity_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/space_x2"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_x4"
+                            app:layout_constraintStart_toEndOf="@id/view_img_humidity"
+                            app:layout_constraintTop_toTopOf="@+id/view_img_humidity"
+                            tools:text="75%" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/space_x20"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view_temp_info" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
